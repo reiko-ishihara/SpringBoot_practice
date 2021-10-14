@@ -21,6 +21,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<!-- 今回はテンプレートエンジンにthymeleaf(タイムリーフ)を使用するため、
+					以下の記述を追加する -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+												<!-- ここまで -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
