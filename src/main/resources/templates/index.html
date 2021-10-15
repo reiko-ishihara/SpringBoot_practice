@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Demo Page</h1>
+<p th:text="${msg}"></p>
+<!-- th:textはThymeleafの構文
+		 変数名にはコントローラーで指定したModelのaddAttributeで指定した名前を指定することで、
+		 コントローラーで指定した値をViewに埋め込むことができる -->
+
+<form method="post" action="/" >		<!-- HTMLから送信された場合はPOSTを指定 -->
+	<input type="text" name="text1" th:value="${value}" >
+	<input type="submit" value="実行" >
+</form>
+	 
+
+</body>
+</html>
