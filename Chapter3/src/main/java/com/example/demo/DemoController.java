@@ -24,17 +24,17 @@ public class DemoController {
 			@ModelAttribute("formModel") User user,		// このアノテーションがついたメソッドの返り値は、自動でModelに追加される
 			ModelAndView mav) {
 		mav.setViewName("index");
-		Iterable<User> list = repos.findAll();
+		Iterable<User> list = repos.findAll();	// Iterableインタフェース：オブジェクトを[for-each]文の対象にすることができる
 		mav.addObject("data", list);
 		return mav;
 	}
 	
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	@Transactional(readOnly=false)
+	@Transactional(readOnly=false)		// ロールバックする処理、今回の場合は読み取りのみはfalseとなりロールバックされる
 	public ModelAndView form(
 			@ModelAttribute("formModel") User user,
 			ModelAndView mav) {
-		repos.saveAndFlush(user);
+		repos.saveAndFlush(user);	// 引数のエンティティを保存し、データベースへ反映させる
 		return new ModelAndView("redirect:/");
 	}
 	
